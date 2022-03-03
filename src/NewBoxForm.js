@@ -7,6 +7,15 @@ function NewBoxForm({ addBox }) {
     height: "",
   });
 
+  function handleChange(evt) {
+    const fieldName = evt.target.name;
+    const value = evt.target.value;
+
+    setFormData(currData => {
+      currData[fieldName] = value;
+      return { ...currData };
+    });
+  }
 
   function handleSubmit(evt) {
     evt.preventDefault();
@@ -18,8 +27,8 @@ function NewBoxForm({ addBox }) {
     });
   };
 
-  return(
-    <form>
+  return (
+    <form onChange={handleChange}>
       <label htmlFor="backgroundColor-input">Background Color:</label>
       <input id="backgroundColor-input" name="backgroundColor"></input>
       <label htmlFor="height-input">Height:</label>
