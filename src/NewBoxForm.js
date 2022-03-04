@@ -33,9 +33,6 @@ function NewBoxForm({ addBox }) {
     });
   }
 
-  // Query selector to grab HTML form element
-  //const form = document.querySelector("#newBoxForm");
-
   // Creates new box using form data and resets form
   function handleSubmit(evt) {
     evt.preventDefault();
@@ -45,7 +42,7 @@ function NewBoxForm({ addBox }) {
       width: "",
       height: "",
     });
-    //form.reset();
+  
   };
 
   // handleChange should be on each input
